@@ -1,26 +1,41 @@
 \chapter{Introduction}
 \label{chap:introduction}
-\q{What is the purpose of this document?}
-The purpose of the current document is to provide an example of using the thesis template and a description on how to use \LaTeX. There are instructions that relate specifically to the template, and some which are generally useful for \LaTeX. 
 
-\q{Where is the structure defined } 
-The detailed typographical rules have been implemented in the
-\texttt{ntnuthesis} \LaTeX\ document class, in the file 
+% - For many of you, this Master's thesis will be the most advanced academic document you ever write.  It needs to demonstrate both academic ability and clear thinking. You Master's should show that you are ready to lead other people, reflect more deeply, and have a professional attitude to your work and environment. 
 
-This was updated by Simon McCallum.
-The package has changed names and version number it is now called
-\texttt{ntnuthesis}
-v\ntnuthesisversion\ as of \ntnuthesisdate.
+% When writing the thesis it is important to know who you are writing for. The target audience for this document is in layers:
+% \begin{enumerate}
+%     \item The marking committee
+%     \item Your supervisor
+%     \item Other students at the same level 
+%     \item Professionals \& Academics
+%     \item The general public.
+% \end{enumerate}
 
-\q{what is a thesis about}
-For many of you, this Master's thesis will be the most advanced academic document you ever write.  It needs to demonstrate both academic ability and clear thinking. You Master's should show that you are ready to lead other people, reflect more deeply, and have a professional attitude to your work and environment. 
 
-\q{who cares}
-When writing the thesis it is important to know who you are writing for. The target audience for this document is in layers:
-\begin{enumerate}
-    \item The marking committee
-    \item Your supervisor
-    \item Other students at the same level 
-    \item Professionals \& Academics
-    \item The general public.
-\end{enumerate}
+%Background
+% - A short summary of background and previous work.
+% - Typically citing the most important and relevant papers of the field
+% - Should lead up to the claim
+
+With virtual reality headsets becoming a more and more available to the general public through systems like the Oculus Rift, HTC Vive, Playstation VR and Samsung gear. With the more heavy powered VR systems like HTC Vive and Oculus rift supporting room scale tracking a subject that has received a lot of studies is designing locomotion system to explore the virtual world outside the bounds of the tracked space while remaining inside the physical tracked space. With several of the devices, the featuring position tracking several different locomotion methods have been researched. Based on research of \cite{peck2012design}, \cite{ruddle2009benefits}, \cite{usoh1999walking} and \cite{nabiyouni2015comparing} the results indicate that natural walking and by extension redirected walking provides an intuitive, natural and immersing way to do locomotion in VR over several other locomotion methods. As such redirected walking is an important locomotion method with the possibility of exploring outside the tracked space. Redirected walking was developed by Sharif Razzaque in 2005\cite{razzaque2005redirected} and features a number of techniques used to transform the position of the tracked space in the virtual world based on the user's movement in the physical world. At the heart of redirected walking techniques such as steer to center and steer to orbit are gains. Gains are used to create a difference between the physical transform and the virtual transform. The most common gains used are Rotation, translation and curvature gain. With rotation gain, the rotation made in the physical world is reduced or increased in the virtual world. As with translation gain, the distance moved in the physical world is increased or decreased in the virtual world. With curvature, a straight path is turned into a bent path. Using the differences between virtual and physical position caused by the gains it becomes possible to explore the virtual space beyond the initial tracked space. However, the major weakness of redirected walking is the large area that is required for it to function without interruption. One of the reasons for this is because gains have a threshold for how large the gain can be without being noticed by the user. Several studies have made measurements of the detection threshold the most cited being "Estimation of detection thresholds for redirected walking techniques"~\cite{steinicke2010estimation} from 2010, but was done with what would now be considered outdated equipment. Since then several studies have also measured the detection thresholds with more modern equipment~\cite{meyer2016detection}, however most of them have had additional test parameters which makes it difficult or even impossible to measure the effects of hardware changes. Further not all the detection thresholds have been measured with the latest equipment such a translation gain.
+\bigskip
+
+%Claim
+% - The most important part of the introduction.
+% - Explain why your contribution is important.
+% - If you like using personal pronouns like ‘I’ and ‘we’, this is a good place 
+% - Should appear as a consequence of the review and lead up to the agenda
+
+\noindent
+With this in mind, the purpose of this report is to serve as a trail for my master thesis which intends to calculate the threshold values for rotation, translation and curvature gain with the latest commercial equipment. By recalculating the detection threshold it will be possible to compare the results with older studies and evaluate the effects of the hardware changes on the detection thresholds. In addition to looking into the thresholds for detection, I also intend to look into the maximum thresholds where the gains are detectable but still usable. The reason for looking for this threshold is that it has value for dynamic redirection techniques that apply higher redirection the further from the center that the user is. For such techniques knowing the max gains that can be applied allows the technique to be exploited to its full potential. As this is a trial run only the detection and maximum thresholds for rotation gain will be implemented. The reason for using rotation gain is that it is the gain that requires the least amount of space to test. In addition, I will also be taking this opportunity to get user feedback for improving the implementation of the experiments used to get the thresholds.
+\bigskip
+% https://docs.unity3d.com/Manual/OpenSourceRepositories.html
+
+%Agenda (in my case optional)
+% - A short summary of the contents of the report and how it fulfills the claim.
+% - Should not be the table of contents in paragraphed form (it often is) 
+% - Also this can be a good place for personal pronouns
+
+\noindent
+As such the report will explain how the rotation gain is implemented and the setup for the experiments needed to calculate the threshold values. The discussion will also be discussed along with lessons learned during the implementation and what changes need to be made for the master thesis implementation.

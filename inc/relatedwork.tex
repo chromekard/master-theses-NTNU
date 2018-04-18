@@ -1,2 +1,140 @@
 \chapter{Related work}
 \label{chap:related_work}
+
+%Content
+% - Literature review relevant to your research
+% - State of the art 
+% - Most probably the part of the report with most references 
+% - Avoid repeating well-known theories, you are not writing a textbook 
+% - Don't present work that you are not using 
+% - Don't present your own contribution in this chapter/section 
+% - In the following parts, the background can be assumed to be known
+
+% ======================================================
+% ============== Locomotion introduction ===============
+% Explain what locomotion's are available and what they are trying to achieve
+% ======================================================
+
+
+Locomotion in VR has been in development for several decades. With several different devices and techniques being researched and developed. The devices developed include devices such as omnidirectional thread mills, pedaling devices, foot platforms, walking in place~\cite{hollerbach2002locomotion}. As for locomotion techniques, all require the head-mounted display (HMD) to be tracked. Locomotion techniques with only head tracking include flying~\cite{usoh1999walking}, natural walking, redirected walking~\cite{razzaque2005redirected}, gestures, teleportation~\cite{frommel2017effects}, World-in-Miniature (WIM)~\cite{pausch1995navigation}~\cite{stoakley1995virtual}, keyboard and joystick. As many locomotion devices and techniques have researched a focus of that research has been to compare locomotion methods while focusing on certain features of that locomotion.
+\bigskip
+
+% ======================================================
+% ============== Natural walking =======================
+% Provide an overview of the advantages of natural walking
+% ======================================================
+
+\noindent
+Such is the case with Ruddle et al.\cite{ruddle2009benefits} which look into navigation accuracy of real walking locomotion with HMD compared to HMD with keys and computer screen with keys. Similarly, Peck et al.~\cite{peck2012design} look into the effect of the locomotion interface on users’ cognitive performance on navigation and wayfinding. Though in their study the locomotion techniques used were natural walking with redirection and distractors, walk in place and joystick interface. Another study that also focuses on real walking is by Usoh et al.~\cite{usoh1999walking}. However, their study confirms that real walking is better than walking in place and flying locomotion in terms of presence and does not focus on navigation. The analysis of locomotion techniques is also included hardware devices such as the Virtusphere~\cite{nabiyouni2015comparing}. Which has been compared to both real walking and game controller locomotion in terms of speed and accuracy. Though the results found that the Virtusphere technique was significantly slower and less accurate than both of the other techniques. As seen natural walking and by extension redirected walking has several advantages over other locomotion techniques. As such, it is a locomotion technique worthy of further study.
+\bigskip
+
+% ======================================================
+% ============== Redirected walking =======================
+% Provide an overview of redirected walking and its components
+% ======================================================
+
+\noindent
+The inception of redirected walking started with Razzaque\cite{razzaque2005redirected}. With the theory of redirected walking being based on the fact that our vision often dominates our other senses. As such when using a head mounted display the user have a grasp of their current direction of movement but have difficulty perceiving the path traveled \cite{bertin2000perception}. Because of this, the users compensate for small inconsistencies during walking, which makes it possible to move them down a path in the real world that is not the same as the virtual world. These inconsistencies are generally referred to as gains with the most common being rotation, translation and curvature gain. With bending gains being more recently introduced~\cite{langbehn2017bending}. With the gains as the foundation for redirected walking, several algorithms have since been created that make use of the different gains. These are algorithms can be divided into two categories \textit{reactive} and \textit{predictive} \cite{azmandian2016redirected}. Reactive algorithms use a particular heuristic to make the optimal choice of gain based on the current user state. In Razzaque thesis\cite{razzaque2005redirected} we are presented with the first reactive redirection algorithms which feature steer to center, steer to orbit and steer to target. Predictive algorithms on the other hand work by predicting the user's path and optimizing the redirection based on the calculated path. Such as FORCE\cite{zmuda2013optimizing} and MPCRed\cite{nescher2014planning}. However predictive algorithms are significantly more complex to implement~\cite{azmandian2016redirected} than reactive. However, they perform better than reactive by reducing the amount resets~\cite{azmandian2016redirected}. %\todo{Maybe include studies showing redirected walking working, Preliminary studies have shown that, in general, redirected walking works [33], [27], [28]}
+\bigskip
+
+\noindent
+In addition, further research in the field has lead to the development of reorientation techniques. Reorientation techniques are used to reorient the user when they enter the boundary of the physical area. This is needed as the users often reach the physical bounds when utilizing redirected walking. Reorientation techniques where first introduced by Williams et al~\cite{williams2007exploring} in 2007 but were back then referred to as a reset. Williams et al proposed three different reorientation technique's: Freeze-backup, Freeze-turn and 2:1-turn. With the 2:1-turn being the most common and using rotation gain to double the rotation of the subject. This means that when they perform the reset they turn 180 degrees in the physical world while turning 360 degrees in the virtual world. In addition, the development of redirected walking has also given rise to a new locomotion method called the Seven league boots~\cite{interrante2007seven}. This locomotion technique uses translation gain to increase the user's speed in their moving direction.
+
+% ======================================================
+% ============== Redirected walking thresholds =======================
+% Go deep and discuss the studies
+% ======================================================
+
+\section*{Detection Thresholds}
+Because the gains are so fundamental to the redirected walking there have been several experiments for finding the threshold values at which the applied gains can be detected. In regards to the rotation gain, the detection threshold measured in the studies in table~\ref{tab:rotationGain} are all done along the horizontal axis (yaw). The reason for only doing the rotation gain in yaw is because performing gain in pitch and roll can't be used to reduce turn circles when performing redirected walking. Some further information on the papers in the table. The paper "Detection Thresholds In Audio-Visual Redirected Walking"~\cite{meyer2016detection} while it provides a detection threshold with modern equipment (Oculus rift) the study provided the user with both audio and visuals stimuli. Thus unlike the other studies, it did not merely rely on visual stimuli. Another note on the "Disguising Rotational Gain for Redirected Walking in Virtual Reality: Effect of Visual Density"~\cite{paludan2016disguising}. The paper looked at rotation gain with different amounts of 3D objects in the scene. A total of 4 experiments was done. A control experiment, an experiment with 0, 4 and 16 objects. The reason for only using one on the values instead of the detection thresholds for all 4 experiments is because the thresholds found was more or less identical when taking the different PSE's into account. An interesting observation in this paper is when there were no objects in the scene no detection thresholds were measured as the answers were about 50/50 for each of the different gains. Meaning that when there are no points of reference in the scene the users cant tell if increased or decreased gain is applied.
+\bigskip
+
+\noindent
+In regards to the translation gain, the detection threshold measured in the studies in table~\ref{tab:translationGain} are all done along the forward vector. Translation gain can also be applied to right vector (strafing) however none of the studies in \ref{tab:translationGain} evaluate this direction. It is also possible to apply translation gain to up vector (jumping) however this is not useful from a redirected walking perspective as it will not reduce the space needed by manipulating it.
+\bigskip
+
+\noindent
+In regards to curvature gain, this is also only applied in the forward axis like translation gain. Some further information regarding "Redirected Steering for Virtual Self-Motion Control with a Motorized Electric Wheelchair"~\cite{neira2012redirected} in table~\ref{tab:curvatureGain}. The curvature gain detection thresholds were measured at different speeds the slow speed being 0.33 m/s and the fast speed being 0.54 m/s. Which is quite lower than the human walking speed at 1.42 m/s. While the detection threshold was done on a wheelchair the study shows that redirected walking can be applied to vehicles in addition to walking and demonstrates the effect of speed on the detection threshold. Another study not included in the table was "Revisiting Detection Thresholds for Redirected Walking: Combining Translation and Curvature Gains"\cite{grechkin2016revisiting}. Through its experiments, it looked at the possible effect of translation gain on the detection threshold for curvature gain. While their results showed that there was no evidence that curvature detection thresholds are systematically changing with translation gain, they did, however, do several measurements of curvature gain detection thresholds. Without translation gain, the detected translation gain threshold was 11.61m radius in their first experiment and 6.41m radius in their second experiment. The reason for the low value in the second experiment is because the curvature gain was slowly increased which made it harder for subjects to detect.
+\bigskip
+
+\noindent
+While each of the different studies provides information regarding the different detection threshold comparing the results between the studies with old equipment and new equipment is difficult. This is because the later studies have other parameters that could also be possible variables that affected the results. Such as with "Detection Thresholds In Audio-Visual" having an audio component in addition to visual. Further, when comparing the results of the studies it is hard to say how much of the variance seen between the studies comes down to small amounts of test subjects against possible other variables. Some of the studies mentioned have also brought up the technology element as a possible factor different threshold values found.
+
+"Furthermore, we believe that view angle of the HMD is an important factor in the amount of immersion that can be achieved, correlating with the users’ trust in the virtual scene"\cite{engel2008psychophysically}.
+
+"In our experiment, the field-of-view was significantly larger. Because peripheral vision plays an important role in motion detection, these technology differences could have affected the estimates."\cite{grechkin2016revisiting}.
+\bigskip
+
+\noindent
+When comparing the changes in hardware within rotation gain using "Influence of altered visual feedback on neck movement for a virtual reality rehabilitative system"~\cite{chen2014influence} as the modern hardware example it is possible to see that how much the detection threshold can be increased are significantly lower than the studies using older equipment \cite{steinicke2010estimation}, \cite{steinicke2008analyses} while on the other hand how much the detection threshold can be decreased is more in the same range. This change matches what one would expect based on the findings in "Speed change detection in foveal and peripheral vision"\cite{traschutz2012speed} which suggests that acceleration is harder to detect in the foveal area of vision than deceleration, however, this relationship is inverted in the peripheral. As such it is possible to speculate that the change in threshold was caused by the increase in FOV which allowed for more peripheral vision. Changes can also be seen in curvature gain where the detection threshold goes from a 22m radius \cite{steinicke2010estimation}, \cite{steinicke2008analyses} circle to a 11m - 6m radius \cite{neira2012redirected}, \cite{meyer2016detection}, \cite{grechkin2016revisiting} with the last equipment. However for translation gain no measurements on newer equipment was found. As such, the author believes that the existing literature provides some insight into the possible effects that the latest hardware will cause. This further justifies a study into the exact effects on the changes on hardware on detection thresholds as the exact changes in all the different gains are not yet known.
+
+% Rotation
+
+\begin{table}[]
+\centering
+\begin{tabular}{|l|ccc|cccc|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Paper}} & \multicolumn{3}{c|}{HMD}                                                                                                                                                    & \multicolumn{4}{c|}{Rotation gain}                        \\ \cline{2-8} 
+\multicolumn{1}{|c|}{}                       & Resolution                                                       & Frame rate                                          & FOV                                                & Increase (\%) & Decrease (\%) & PSE        & Participants \\ \hline
+Steinicke et al, 2010\cite{steinicke2010estimation}                              & 800 x 600                                                        & 60Hz                                                & 40                                                 & 49            & 20            & 0.95       & 14           \\ \hline
+Steinicke et al, 2008\cite{steinicke2008analyses}                              & 800 x 600                                                        & 60Hz                                                & 40                                                 & 68            & 10            & 0.8403     & 11           \\ \hline
+Engel et al, 2008\cite{engel2008psychophysically}                                  & ?                                                                & ?                                                   & ?                                                  & 35            & 15            & $\sim$1.12 & 10           \\ \hline
+Chen et al, 2014\cite{chen2014influence}                                   & 1280 x 800                                                       & 90Hz                                                & 110                                                & 15.9          & 9.7           & ?          & 10           \\ \hline
+Bruder et al, 2009\cite{bruder2009impact} (Male)                          & 800 x 600                                                        & 60Hz                                                & 40                                                 & 44            & 16            & 0.9447     & 7            \\ \hline
+Bruder et al, 2009\cite{bruder2009impact} (Female)                        & 800 x 600                                                        & 60Hz                                                & 40                                                 & 51            & 21            & 0.9642     & 6            \\ \hline
+Meyer et al, 2016\cite{meyer2016detection}                                  & 1280 x 800                                                       & 90Hz                                                & 110                                                & 36            & 32            & ?          & 20           \\ \hline
+Paludan et al, 2016\cite{paludan2016disguising}                                & 1280 x 1024                                                      & 60Hz                                                & 60                                                 & 19            & 19            & 1          & 17           \\ \hline
+Bruder et al, 2012\cite{bruder2012redirecting} (Wheelchair)                    & 1280 x 1024                                                      & 60Hz                                                & 60                                                 & 26.2          & 22.81         & 1.0111     & 12           \\ \hline
+Bruder et al, 2012\cite{bruder2012redirecting} (Walking)                    & 1280 x 1024                                                      & 60Hz                                                & 60                                                 & 25.94         & 31.9          & 0.9544     & 12           \\ \hline
+Steinicke et al, 2008\cite{steinicke2008moving}                              & \begin{tabular}[c]{@{}c@{}}1240 x 1024\\  800 x 600\end{tabular} & \begin{tabular}[c]{@{}c@{}}60Hz\\ 60Hz\end{tabular} & \begin{tabular}[c]{@{}c@{}}80\\ 40-45\end{tabular} & 30            & 30            & -          & 8            \\ \hline
+\end{tabular}
+\caption{Overview of study reporting detection thresholds for rotation gain and the hardware used.}
+\label{tab:rotationGain}
+\end{table}
+
+% Translation
+
+\begin{table}[]
+\centering
+\begin{tabular}{|l|lcc|cccc|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Paper}} & \multicolumn{3}{c|}{HMD}   & \multicolumn{4}{c|}{Translation gain}   \\ \cline{2-8} 
+
+\multicolumn{1}{|c|}{}                       & Resolution                 & \multicolumn{1}{l}{Frame rate}                      & \multicolumn{1}{l|}{FOV}                           & \multicolumn{1}{l}{Increase (\%)} & \multicolumn{1}{l}{Decrease (\%)} & \multicolumn{1}{l}{PSE} & \multicolumn{1}{l|}{Participants} \\ \hline
+Steinicke et al, 2010\cite{steinicke2010estimation}                              & 800 x 600                                                                           & 60Hz                                                & 40                                                 & 14                                & 26                                & 1.07                    & 15                                \\ \hline
+Steinicke et al, 2008\cite{steinicke2008analyses}                              & 800 x 600                                                                           & 60Hz                                                & 40                                                 & 19                                & 22                                & 0.9972                  & 16                                \\ \hline
+Bruder et al, 2009\cite{bruder2009impact} (Male)                          & 800 x 600                                                                           & 60Hz                                                & 40                                                 & 11.2                              & 20.6                              & 1.0776                  & 7                                 \\ \hline
+Bruder et al, 2009\cite{bruder2009impact} (Female)                        & 800 x 600                                                                           & 60Hz                                                & 40                                                 & 16.2                              & 19.4                              & 1.0535                  & 6                                 \\ \hline
+Bruder et al, 2012\cite{bruder2012redirecting} (Wheelchair)                    & \multicolumn{1}{c}{1280 x 1024}                                                     & 60Hz                                                & 60                                                 & 36.07                             & 6.22                              & 1.1508                  & 12                                \\ \hline
+Bruder et al, 2012\cite{bruder2012redirecting} (Walking)                       & \multicolumn{1}{c}{1280 x 1024}                                                     & 60Hz                                                & 60                                                 & 28.96                             & 12.76                             & 1.0824                  & 12                                \\ \hline
+Steinicke et al, 2008\cite{steinicke2008moving}                              & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}1240 x 1024\\ 800 x 600\end{tabular}} & \begin{tabular}[c]{@{}c@{}}60Hz\\ 60Hz\end{tabular} & \begin{tabular}[c]{@{}c@{}}80\\ 40-45\end{tabular} & 45                                & 15                                & -                       & 8                                 \\ \hline
+\end{tabular}
+\caption{Overview of study reporting detection thresholds for translation gain and the hardware used.}
+\label{tab:translationGain}
+\end{table}
+
+% Curvature
+
+\begin{table}[]
+\centering
+\begin{tabular}{|l|ccc|ccc|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Paper}} & \multicolumn{3}{c|}{HMD}                                                                                                                                                   & \multicolumn{3}{c|}{Curvature gain}                                                                                                                             \\ \cline{2-7} 
+\multicolumn{1}{|c|}{}                       & Resolution                                                      & Frame rate                                          & FOV                                                & Radius (m)                                                                                                                             & PSE     & Participants \\ \hline
+Steinicke et al, 2010\cite{steinicke2010estimation}                        & 800 x 600                                                       & 60Hz                                                & 40                                                 & 22                                                                                                                                     & 0.002   & 12           \\ \hline
+Steinicke et al, 2008\cite{steinicke2008analyses} E1                           & 800 x 600                                                       & 60Hz                                                & 40                                                 & 16                                                                                                                                     & -1.74   & 10           \\ \hline
+Steinicke et al, 2008\cite{steinicke2008analyses} E2                           & 800 x 600                                                       & 60Hz                                                & 40                                                 & 24                                                                                                                                     & -1.37   & 10           \\ \hline
+Bruder et al, 2009\cite{bruder2009impact} (Male)                          & 800 x 600                                                       & 60Hz                                                & 40                                                 & 17.4                                                                                                                                   & $\sim$0 & 7            \\ \hline
+Bruder et al, 2009\cite{bruder2009impact} (Female)                        & 800 x 600                                                       & 60Hz                                                & 40                                                 & 24.9                                                                                                                                   & $\sim$0 & 6            \\ \hline
+Meyer et al, 2016\cite{meyer2016detection}                                  & 1280 x 800                                                      & 90Hz                                                & 110                                                & 6                                                                                                                                      & ?       & 20           \\ \hline
+Neira et al, 2012\cite{neira2012redirected} (Wheelchair)                     & 1280 x 1024                                                     & 60Hz                                                & 60                                                 & \begin{tabular}[c]{@{}c@{}}5.76 (0.33 m/s)\\ 16.52 (0.54 m/s)\end{tabular}                                                             & ?       & 10           \\ \hline
+Neth et al, 2012\cite{neth2012velocity}                                   & 800 x 600                                                       & 60Hz                                                & 40-45                                              & \begin{tabular}[c]{@{}c@{}}10.57 (0.75m/s)\\ 23.75 (1.00m/s)\\ 26.99 (1.25m/s)\end{tabular}                                            & $\sim$0 & 12           \\ \hline
+Bruder et al, 2012\cite{bruder2012redirecting} (Wheelchair)                    & 1280 x 1024                                                     & 60Hz                                                & 60                                                 & 8.97                                                                                                                                   & $\sim$0 & 12           \\ \hline
+Bruder et al, 2012\cite{bruder2012redirecting} (Walking)                       & 1280 x 1024                                                     & 60Hz                                                & 60                                                 & 14.95                                                                                                                                  & $\sim$0 & 12           \\ \hline
+Steinicke et al, 2008\cite{steinicke2008moving}                              & \begin{tabular}[c]{@{}c@{}}1240 x 1024\\ 800 x 600\end{tabular} & \begin{tabular}[c]{@{}c@{}}60Hz\\ 60Hz\end{tabular} & \begin{tabular}[c]{@{}c@{}}80\\ 40-45\end{tabular} & 3.3                                                                                                                                    & -       & 8            \\ \hline
+Grechkin et al, 2016\cite{azmandian2016redirected} E1                            & 960 x 1080                                                      & 60Hz                                                & 110                                                & \begin{tabular}[c]{@{}c@{}}8.54   (0.75 translation gain)\\ 11.61 (1.00 translation gain)\\ 15.63 (1.40 translation gain)\end{tabular} & -       & 19           \\ \hline
+Grechkin et al, 2016\cite{azmandian2016redirected} E2                            & 960 x 1080                                                      & 60Hz                                                & 110                                                & \begin{tabular}[c]{@{}c@{}}6.37 (0.75 translation gain)\\ 6.41 (1.00 translation gain)\\ 6.85 (1.40 translation gain)\end{tabular}     & -       & 17           \\ \hline
+\end{tabular}
+\caption{Overview of study reporting detection thresholds for curvature gain and the hardware used.}
+\label{tab:curvatureGain}
+\end{table}
