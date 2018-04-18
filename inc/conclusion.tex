@@ -1,14 +1,31 @@
 \chapter{Conclusion}
 \label{chap:conclusion}
 
-This is where you provide an overview of the thesis now that it is finished.  What are the critical things that can be learnt from the thesis for the reader.
+% Content
+% - Summaries your main findings; to what degree were your claims fulfilled
+% - The conclusion must be supported by the contribution
+% - Discuss briefly what relevant work you see as a natural consequence of your work
+% - This is where you provide an overview of the thesis now that it is finished.  What are the critical things that can be learnt from the thesis for the reader.
 
-This is additional text.
+The measured detection thresholds for rotation gain with the latest equipment (HTC Vive) shows that the detection thresholds are when the gain is increased 11\% and when decreased 21\% with a PSE of 0.95. Based on these results and comparing the results with previous studies the results indicate that the detection threshold for rotation gain is affected by changes in the HMD. The changes in hardware specifically reduce how much the rotation gain can be increased before being detected. However, which specific changes to the HMD caused the effect is still uncertain, as it could be both resolution and field of view. As such this will have an effect on how usable redirected walking will be as a VR locomotion method. With redirected waking algorithms using the detection thresholds having a lower range in how much the gain can be increased without being noticed.
+
+When examining the maximum tolerance for rotation gain the results and observations indicate that how much rotation gain a participant can endure very much depends on the person. This was because how much gain the person could endure would depend on their sensitivity to simulation sickness. As such there were some participants that could endure high rotation gains while some who stopped the moment the gains became noticeable. Further, it was also observed that there was a large difference in the amount motion sickness caused by increasing and decreasing the gain. With decreased rotating gain being the most simulation sickness inducing. While high rotation gains had a smaller effect on simulation sickness. As such when using redirected walking as a locomotion method the algorithms in use should to the best possible extent not go over the detection threshold for decreased gains, however, it is possible for them to be less strict on the limit for how much the gain can be increased.
+
+% PAPER VERSION
+
+From the results of this experiment, a new detection threshold was calculated for rotation, translation and curvature gain. The detection thresholds for rotation gain were at 13\% increased rotation and 21\% decreased rotation. When compared to previous studies that look at the threshold for rotation gain the comparison shows that the detection threshold for increased rotation has been reduced on the new hardware compared to the old. However, the detection threshold for decreased rotation has not changed significantly. For translation gain, 19\% increased movement and 5\% decreased movement. The opposite is found when comparing the detection threshold found for translation gain with those of older studies. The comparison shows that how much the movement can be decreased is significantly lower compared to the previous studies. While how much the movement can be increased is about the same. The detection threshold for curvature gain found in this study would cause the user to walk in a circle with a radius of 28.65m. Based on the comparison with older studies this is slightly larger than previous results however not large enough that it can be attributed to hardware instead of other test parameters such as walking speed or the participant bias.
+
+In addition, when looking into if it there was a range of gain values that were noticeable but usable the results indicate that it does exist, however, it is extremely dependant on the person's sensitivity to the given gain. So much so that in some cases it does not exist as the user will become ill the moment they notice that the gain is applied. This sensitivity also applies to when a person first notices a gain. Because of this when users first notice that a gain is applied varies considerably as well. However, on average this point was above the detection thresholds in most cases as such it would still be reasonable to use detection thresholds as the default limits used by redirected walking algorithms. Though the best option would be to have the limits be directly customized to a given user. The usage of this additional range of values would then be used as an additional option for the user if they desired even more redirection. Possibly due to limited space at the cost of immersion.
 
 \section{Future Work}
 \label{sec:future}
-Where would the project go from here.
+% - Where would the project go from here.
 
 \todo{again more examples and discussion about what it means to plan}
-
 \todo{there are many more things to say}
+
+As future work finding which specific part of the HMD that causes the changes to the detection thresholds would be an important part of understanding how to counteract the decreased rotation gain detection threshold. Further the effects of the HMD changes have not been tested with all of the different gain methods and the effects on them are currently uncertain.
+
+% Future work paper
+
+While this study has show that hardware specifications have an effect on the detection threshold the question of the what happens in the future still remains. While the HTC Vive is currently considered a modern piece of equipment the second version is currently on it's way. Further other HMD that promise to provide even better specification in terms of resolution and FOV are also being developed such as the PiMax. As such it remains to see if the detection thresholds will change further with even more changes in hardware or if the changes will stagnate. Further in regards to the range of usable but noticeable gains it remains to be seen if can provide a more usable thought less immersing experience in a smaller play area. Such as leading to fewer reset or how much it would effect simulation sickness.

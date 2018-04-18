@@ -1,51 +1,67 @@
 \chapter{Methods}
 \label{chap:methods}
 
-The \texttt{ntnuthesis} is built upon the standard \LaTeX\
-\texttt{report} class. All commands from the \texttt{report} class can
-be used, with the two exceptions of \verb+\subsubsection+ and
-\verb+\paragraph+. This is because there should only be three
-levels of headings according to the guidelines. 
-It has been placed in a folder called \texttt{ntnuthesis} so that it does not
-clutter your work.  You should not change anything in \texttt{ntnuthesis}. If you need to change 
-anything you should make a pull request on the github repository for this thesis at
-\url{https://github.com/COPCSE-NTNU/master-theses-NTNU}
+\section{Experiments}
+To calculate the detectable and maximum threshold values for rotation gain 2 experiments were used. The experiment for finding the detection thresholds for rotation gain was based on the experiments done in the threshold detection report\cite{steinicke2010estimation}. The experiment for detecting the maximum threshold was experiment created by the author. The experiments took place at the VR lab at NTNU Gj\o{}vik campus. The head-mounted displays (HMD) used were HTC Vive's each having a tracked space of about 2x2 meters. During the experiments, the lights were turned off.
 
-\section{Packages Used by ntnuthesis}
-\label{sec:packages}
+\subsection{Questionnaire}
+Before and after the experiments each participant filled out parts of a questionnaire, the questionnaire can be found in the appendix~\ref{app:questionnaire_results}. The first page was filled in before starting the experiments. The first page was for gathering information about the user group to be able to make comparisons with the previous tests. The rest of the questionnaire was done after the experiments were completed or after the subjects decided that they were unable to complete the experiment. This was allowed as the second part of the questionnaire focused on user experience and on gathering data to make improvements to the experiments. In addition to the questionnaire, each subject was also asked after the experiment if they experienced any motion sickness during the experiments.
 
-In addition to the \texttt{report} document class,
-\texttt{ntnuthesis} makes direct use of the following packages
-that must hence be present:
-\begin{description}
-	\item[geometry:] used for setting the sizes of the margins and
-  	headers.
-	\item[fontenc:] used with option \texttt{T1} for forcing the Cork font
-  	encoding (necessary for the Charter font).
-	\item[charter:] load Charter as the default font.
-	\item[euler:] load the Euler math fonts.
-	\item[bable:] for language handling.
-	\item[listing:] for code listing.
-\end{description}
+\subsection{Threshold experiment}
+For the threshold experiment, the instruction on how to complete the experiment was first given in the virtual environment. The instructions were given in a written format with the text being displayed in 3D space with a position relative to a few meters in front of the HMD, the full text of the instructions can be found in Appendix~\ref{app:Instructions}. In the case that the written instructions were not enough verbal instructions were then given by the author to fill in the missing information. After closing the instructions the experiment starts, however, it was still possible to open the instructions again at any point.
+\bigskip
 
-\section{Other Relevant Packages}
-\label{sec:otherpackages}
+\noindent
+The rest of the experiment consisted of several steps:
+\begin{enumerate}
+    \item The first step of the experiment was to look at one of the 4 panels showing targets that were distributed in the virtual environment. Each panel was placed 10 meters from the center of the experiment area in each direction IE. North, South, East, and West creating a 90 degree between them, as seen in figure\ref{fig:virtualEnviroment}. The purpose of this was to create a point of reference for the next step in the experiment.
+    \item Next the panel in front and behind the user would change to an image showing two arrows pointing in the direction of the panels to their side and the panels on the side would change to show the image of a target. In addition, a new rotation gain value would be applied.
+    \item The subject would then have to rotate 90 degrees to look at one of the panels showing a target.
+    \item The subject would then have to rotate 90 degrees to look at one of the panels showing a target. After that the panels would display the image seen in figure~\ref{fig:question} asking the user if the virtual rotation was more than the physical or if the virtual rotation was less than the physical. In the case that the virtual rotation was more than the physical the user would press the up button on the HTC Vive controller trackpad. In the case that the virtual rotation was less than the physical, the user would press the down button on the HTC Vive controller trackpad. After completing this step the experiment would repeat from step 2 until no more new rotation gains were left. %\comment{Should this last sentence be in the text below.}
+\end{enumerate}
 
-The author of a thesis might want to use a bunch of different packages
-to those described in Section~\ref{sec:packages} in order to have all features needed for their document. 
-In particular, it is advised to use the following:
-\begin{description}
-	\item[inputenc:] to allow \LaTeX\ to use more than 7-bit ASCII for its
-	  input. Most often, the option \texttt{latin1} will do.
-	\item[babel:] to load language specific strings. Reasonable options
-	  include \texttt{british}, 
-		\texttt{american}, \texttt{norsk} and
-	  \texttt{nynorsk}.
-	\item[graphicx:] to include graphics.
-	\item[hyperref:] this is a very nice package that makes cross links in
-	  pdf documents. Use with option \texttt{dvips} or \texttt{pdftex}
-	  in accordance with the driver that you use. Unfortunately, hyperref
-	  is not completely bugfree\dots
-\end{description}
+\noindent
+The rotation gains tested in the experiment were in the range of -50\% gain to +50\% gain. Meaning that gain of 50\% would make a 60-degree physical rotation would be a 90 degrees virtual rotation, on the other hand, a -50\% gain would make a 135 degrees physical rotation equivalent to a 90 degrees virtual rotation. The values between -50\% to 50\% were sampled at steps of 10\% with each step being tested 10 times, meaning that the steps 2-4 of the experiment would be repeated 110 times before the experiment ended. When this experiment ended the maximum experiment starts.
 
-We have web pages as well~\cite{NTNU:Website}, and now games like Halo~\cite{Halo}.
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[width=60mm]{Images/question.png}
+    \caption{Question text displayed}
+    \label{fig:question}
+\end{figure}
+
+\subsection{Maximum experiment}
+The maximum experiment is divided into two parts. The first for finding the highest possible gain (maximum experiment) the second for finding the lowest possible gain (minimum experiment). Both of the parts contained its own set of instructions, same as the threshold experiment that would appear at the beginning of the experiment. Both of the parts of the experiment contained the same steps as the threshold experiment however the main difference was that question displayed by the panels in step 4 was different. Instead, it asked if the user wished to continue, by pressing up on the HTCH Vive trackpad the experiment would continue and the gain would increase or decrease depending on which part of the experiment the subject was in. By pressing down on HTCH Vive trackpad the subject would confirm that they had reached the limit for which they wanted the rotation gain to increase. After the down button on the trackpad had been pressed on both the parts of the maximum experiment the experiment ends. While it is possible to go on as long as possible with the maximum part of the experiment, the minimum part of the experiment, on the other hand, would stop when the gain was reduced by 90\%.
+
+
+
+%==============================
+% FROM PAPER: 
+%==============================
+
+
+
+\section{Method}
+The HMD used was the HTC Vive. The HTC Vive features 1080 x 1200 resolution for each eye, 110 degrees field of view, 90Hz refresh rate and a 5m cable. The chaperone provided by the HTC Vive bounds were removed as much as possible as it was possible to use them to observe the gain being applied. Before starting the VR experiment a demographics questionnaire would first be performed followed by a simulation sickness questionnaire~\cite{kennedy1993simulator} (SSQ) before and after the VR experiment. When entering VR participants would have a tutorial room to familiarize themselves with the controls and the VR environment before starting the VR experiment. The instructions on how to carry out the experiment were given primarily in VR through both text and audio. Ambient sound was also playing to prevent participants from using audio cues. The physical room used for the experiments was about 7m by 7m in dimensions and can be seen in figure \ref{fig:experiment_room}. Windows in the room where covered and the light was turned off during experiments. When the experiment was finished participants were offered sweets but no other reward was given or mentioned until after completion. A participant was allowed to participate in the experiment multiple times as long as different gains were being tested. In the case of simulation sickness, the patients could take a break at any time or decide to quit the experiment.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/vr_experiment_room.JPG}
+    \caption{Experiment Room}
+    \label{fig:experiment_room}
+\end{figure}
+
+\subsection{E1: Sub Experiment 1}
+The first experiment was for finding the gains that were in between noticeable and unusable. As such in this experiment the over time until a detection threshold and a maximum threshold was found. As the experiment was running the gain would randomly increase between every 10 to 15 seconds, with the amount of increase varying between gains and if the gain was positive and negative. The participants would at first indicate when the gain became noticeable. Then the next time the participants indicated would be when they reached a gain that they could not tolerate. For rotation and translation gain the experiment would then repeat with the opposite gain. Whether positive or negative gain should be tested first was randomized. For curvature gain only left or right curvature was tested as previous experiments have found no difference between the two. With translation and rotation gain the gain would increase randomly between 0.05 to 0.1. When the rotation and translation gain was positive the gain increase was multiplied by a factor of 2 as they had a higher limit. Both rotation gain and translation gain would start at 0. While with curvature gain the gain would start at $ \pm $ 36000 cm circumference and then 10\% would be subtracted with each gain increase. Limits were also added to the experiment to prevent the experiment from running indefinitely. As such rotation and translation gain auto progressed in the case that the gain became less than -0.9 or more than 4.0. With curvature gain, the experiment would progress once the gain became less than $ \pm $ 1600cm. To encourage rotation when rotation gain was applied the participants were given a gun that could be used to shoot at disappearing targets. With translation and curvature gain two cannons would shoot slow moving balls that the participants could catch to score points.
+
+\subsection{E2: Sub Experiment 2}
+The last experiment that the participants performed were almost the same as those used in \cite{steinicke2008analyses} and \cite{steinicke2010estimation}. As such the participants had a gain applied and where then presented with a two-alternative forced-choice (2AFC) task, though actually a pseudo-2AFC task according to \cite{grechkin2016revisiting}. All the virtual rooms made for this experiment was large enough to ensure that there were no vertical objects within 10m of the starting position. The starting positions were not randomized but the relative location and rotation were as the position carried over from the last stage.
+
+\subsubsection{Rotation gain}
+For rotation gain, the participants were required to rotate 90 degrees and then look at a green circle while a gain was applied. When the circle turned blue they were required to indicate if the virtual rotation was larger or smaller than the physical rotation. This was then repeated for the remaining gains. The range of rotation gain used was from -0.5 to 0.5 with increments of 0.1 in between with each increment being repeated 10 times.
+
+\subsubsection{Translation gain}
+Before the translation experiment could start the virtual room and physical room needed to be aligned. This was required as the room used did not provide enough space for the participant to walk freely in any direction. As such the virtual space and physicals space was aligned so that a 1m wide path in the virtual world would match the diagonal of the room. This was done by the researcher. The participants were then required to walk along the path towards a green ball while a gain was applied. The ball would then turn blue after the participant had walked 5m in the virtual world. The participants were then required to evaluate if the virtual distance traveled was longer or shorter than the physical distance. After answering a green circle would appear on the floor to indicate the reset position. After having walked back the steps above would be repeated until there were no more gains to test. The range of translation gains used were from -0.6 to 0.6 with 0.1 increments, with each increment being repeated 10 times.
+
+\subsubsection{Curvature gain}
+Curvature gain used the same steps as translation gain. The main differences were that no gain was applied for the first 1.5m and the virtual distance required to walk before the ball turned blue was 6.5m. In addition, the participant was instead required to answer if they noticed any curvature or not. As for the range of gains the following circumference values were used [36000, 18000, 12000, 9000, 6000 and 0] which correspond to [5\textdegree, 10\textdegree, 15\textdegree, 20\textdegree, 30\textdegree and 0\textdegree] rotation after 5m, again with 10 iterations of each. For curvature gain, only positive values for the gain were used as this made the participants curve left. In the case that the participants had curved right the HTC Vive cable could be used to determine curvature by feeling the drag on the cable, as it was longer from the computer. This should not be a large issue given that previous studies have found little difference between left and right curvature~\cite{bruder2012redirecting}. As such the method used was no longer 2AFC as used in \cite{steinicke2010estimation} but a binary yes/no response. Though changing to a yes/no response will make response bias more prevalent. Further, the virtual length required was reduced from 7m in \cite{steinicke2010estimation} to 6.5m because if 7m was used the participants would collide in the walls of the room when the curvature radius was decreased.
